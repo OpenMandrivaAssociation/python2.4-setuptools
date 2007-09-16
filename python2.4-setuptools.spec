@@ -29,13 +29,12 @@ perl -pi -e 's|^#!python|#!/usr/bin/python2.4|' \
 
 %install
 rm -rf %{buildroot}
-python2.4 setup.py install --prefix=%{buildroot}/%_prefix --old-and-unmanageable
+python2.4 setup.py install --root=%{buildroot} --record INSTALLED_FILES \
+    --old-and-unmanageable 
 
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f INSTALLED_FILES
 %defattr(-,root,root)
 %doc setuptools.txt pkg_resources.txt api_tests.txt EasyInstall.txt  
-%_bindir/*
-%_libdir/python2.4/*
