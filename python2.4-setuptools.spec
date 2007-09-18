@@ -1,7 +1,7 @@
 %define module	setuptools
 %define name	python2.4-%{module}
 %define version 0.6c6
-%define release %mkrel 1
+%define release %mkrel 2
  
 Name: 		%{name}
 Version: 	%{version}
@@ -29,8 +29,10 @@ perl -pi -e 's|^#!python|#!/usr/bin/python2.4|' \
 
 %install
 rm -rf %{buildroot}
-python2.4 setup.py install --root=%{buildroot} --record INSTALLED_FILES \
-    --old-and-unmanageable 
+python2.4 setup.py install --root=%{buildroot} --record INSTALLED_FILES.tmp
+
+grep -v -E '^%{_bindir}/easy_install$' INSTALLED_FILES.tmp > INSTALLED_FILES
+rm -f %{buildroot}%{_bindir}/easy_install
 
 %clean
 rm -rf %{buildroot}
