@@ -1,17 +1,17 @@
 %define module	setuptools
 %define name	python2.4-%{module}
-%define version 0.6c6
-%define release %mkrel 2
+%define version 0.6c7
+%define release %mkrel 1
  
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Summary:    Python Distutils Enhancements
-License:    Zope Public License (ZPL)
-Group:      Development/Python
-Url:        http://peak.telecommunity.com/DevCenter/setuptools
-Source0:    http://cheeseshop.python.org/packages/source/s/%{module}/%{module}-%{version}.tar.bz2
-BuildRequires: python2.4-devel
+Summary:	Python Distutils Enhancements
+License:	Zope Public License (ZPL)
+Group:		Development/Python
+Url:		http://peak.telecommunity.com/DevCenter/setuptools
+Source0:	http://cheeseshop.python.org/packages/source/s/%{module}/%{module}-%{version}.tar.bz2
+BuildRequires:	python2.4-devel
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
