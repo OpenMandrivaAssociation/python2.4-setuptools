@@ -13,6 +13,7 @@ Url:		http://peak.telecommunity.com/DevCenter/setuptools
 Source0:	http://cheeseshop.python.org/packages/source/s/%{module}/%{module}-%{version}.tar.bz2
 BuildRequires:	python2.4-devel
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 Extensions to the python-distutils for large or complex distributions.
