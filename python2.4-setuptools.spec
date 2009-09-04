@@ -1,7 +1,7 @@
 %define module	setuptools
 %define name	python2.4-%{module}
 %define version 0.6c7
-%define release %mkrel 3
+%define release %mkrel 4
  
 Name: 		%{name}
 Version: 	%{version}
